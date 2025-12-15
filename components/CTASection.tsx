@@ -21,7 +21,6 @@ const CTAText = styled(Typography)(({ theme }) => ({
   lineHeight: 1.6,
   maxWidth: '700px',
   margin: '0 auto',
-  marginBottom: theme.spacing(5),
   [theme.breakpoints.down('md')]: {
     fontSize: '1.25rem',
     marginBottom: theme.spacing(4),

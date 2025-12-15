@@ -53,15 +53,21 @@ export default function SafeImage({
     );
   }
 
+  const baseStyle = style || {};
+  const objectFitValue = (baseStyle.objectFit as React.CSSProperties['objectFit']) || 'cover';
+  
   const imageProps = fill
     ? {
         fill: true,
-        style: { objectFit: 'cover', ...style },
+        style: { 
+          ...baseStyle, 
+          objectFit: objectFitValue,
+        } as React.CSSProperties,
       }
     : {
         width,
         height,
-        style,
+        style: baseStyle,
       };
 
   return (

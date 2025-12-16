@@ -2,6 +2,7 @@
 
 import { Box, Container, Grid, Typography, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -58,51 +59,58 @@ export default function AboutSection() {
   return (
     <SectionContainer id="sobre-nosotros">
       <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+        <AnimatedSection delay={0} direction="up" duration={700}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              fontFamily: 'Lato',
+              fontWeight: 700,
+              color: '#294549',
+              textAlign: 'center',
+              marginBottom: { xs: 4, md: 6 },
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
+            }}
+          >
+            Sobre el Estudio
+          </Typography>
+        </AnimatedSection>
         <Grid container spacing={{ xs: 3, md: 6 }} alignItems="center">
           <Grid item xs={12} md={6}>
-            <TextContent>
-              <Typography
-                variant="h2"
-                component="h2"
-                sx={{
-                  fontFamily: 'Lato',
-                  fontWeight: 700,
-                  color: '#294549',
-                  marginBottom: { xs: 3, md: 4 },
-                  fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
-                }}
-              >
-                Sobre el Estudio
-              </Typography>
-              <Paragraph>
-                Con una sólida tradición en el ejercicio notarial, nuestro estudio se
-                distingue por el compromiso inquebrantable con la seguridad jurídica y
-                la excelencia profesional.
-              </Paragraph>
-              <Paragraph>
-                Ofrecemos un servicio caracterizado por la responsabilidad profesional,
-                la atención personalizada y el respaldo legal que cada cliente merece.
-                Cada acto notarial es tratado con la máxima seriedad y dedicación.
-              </Paragraph>
-              <Paragraph>
-                Nuestra experiencia y conocimiento se ponen al servicio de quienes
-                confían en nosotros para proteger sus intereses y garantizar la validez
-                jurídica de sus decisiones más importantes.
-              </Paragraph>
-            </TextContent>
+            <AnimatedSection delay={200} direction="right" duration={700}>
+              <TextContent>
+                <Paragraph>
+                  Con una sólida tradición en el ejercicio notarial, nuestro estudio se
+                  distingue por el compromiso inquebrantable con la seguridad jurídica y
+                  la excelencia profesional.
+                </Paragraph>
+                <Paragraph>
+                  Ofrecemos un servicio caracterizado por la responsabilidad profesional,
+                  la atención personalizada y el respaldo legal que cada cliente merece.
+                  Cada acto notarial es tratado con la máxima seriedad y dedicación.
+                </Paragraph>
+                <Paragraph>
+                  Nuestra experiencia y conocimiento se ponen al servicio de quienes
+                  confían en nosotros para proteger sus intereses y garantizar la validez
+                  jurídica de sus decisiones más importantes.
+                </Paragraph>
+              </TextContent>
+            </AnimatedSection>
           </Grid>
           <Grid item xs={12} md={6}>
-            <ImagePlaceholder>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: '#999',
-                  fontStyle: 'italic',
-                }}
-              >
-                [Imagen mock: Escribanía, documentos, firma, escritorio]
-              </Typography>
-            </ImagePlaceholder>
+            <AnimatedSection delay={400} direction="left" duration={700}>
+              <ImagePlaceholder>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: '#999',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  [Imagen mock: Escribanía, documentos, firma, escritorio]
+                </Typography>
+              </ImagePlaceholder>
+            </AnimatedSection>
           </Grid>
         </Grid>
       </Container>

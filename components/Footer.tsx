@@ -2,6 +2,7 @@
 
 import { Box, Container, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const FooterContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#294549',
@@ -33,12 +34,16 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Container maxWidth="lg">
-        <FooterTitle>
-          Vera Ojeda – Estudio Notarial
-        </FooterTitle>
-        <FooterText>
-          © {currentYear} Vera Ojeda – Estudio Notarial. Todos los derechos reservados.
-        </FooterText>
+        <AnimatedSection delay={0} direction="fade" duration={600}>
+          <FooterTitle>
+            Vera Ojeda – Estudio Notarial
+          </FooterTitle>
+        </AnimatedSection>
+        <AnimatedSection delay={200} direction="fade" duration={600}>
+          <FooterText>
+            © {currentYear} Vera Ojeda – Estudio Notarial. Todos los derechos reservados.
+          </FooterText>
+        </AnimatedSection>
       </Container>
     </FooterContainer>
   );

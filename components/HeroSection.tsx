@@ -3,6 +3,7 @@
 import { Box, Container, Typography, Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const HeroContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#294549',
@@ -98,7 +99,20 @@ const claimStyles = {
 
 export default function HeroSection() {
   return (
-    <HeroContainer id="inicio">
+    <HeroContainer 
+      id="inicio"
+      sx={{
+        animation: 'fadeIn 1s ease-out',
+        '@keyframes fadeIn': {
+          from: {
+            opacity: 0,
+          },
+          to: {
+            opacity: 1,
+          },
+        },
+      }}
+    >
       <BackgroundImage>
         <Box
           sx={{
@@ -124,57 +138,64 @@ export default function HeroSection() {
         <HeroContent>
           <Grid container spacing={{ xs: 1.5, sm: 2, md: 4 }} alignItems="center">
             <Grid item xs={5} sm={5} md={5}>
-              <LogoContainer>
-                <Box
-                  sx={{
-                    width: '100%',
-                    maxWidth: { xs: '200px', sm: '250px', md: '300px', lg: '380px' },
-                    aspectRatio: '1 / 1',
-                    position: 'relative',
-                    margin: '0 auto',
-                  }}
-                >
-                  <Image
-                    src="/images/logo.png"
-                    alt="Vera Ojeda Logo"
-                    fill
-                    style={{ objectFit: 'contain' }}
-                    priority
-                  />
-                </Box>
-              </LogoContainer>
+              <AnimatedSection delay={200} direction="fade" duration={800}>
+                <LogoContainer>
+                  <Box
+                    sx={{
+                      width: '100%',
+                      maxWidth: { xs: '200px', sm: '250px', md: '300px', lg: '380px' },
+                      aspectRatio: '1 / 1',
+                      position: 'relative',
+                      margin: '0 auto',
+                    }}
+                  >
+                    <Image
+                      src="/images/logo.png"
+                      alt="Vera Ojeda Logo"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      priority
+                    />
+                  </Box>
+                </LogoContainer>
+              </AnimatedSection>
             </Grid>
             <Grid item xs={7} sm={7} md={7}>
-              <TextContent>
-                <Typography component="h1" sx={titleStyles}>
-                  VERA OJEDA
-                </Typography>
-                <Typography component="h2" sx={subtitleStyles}>
-                  ESTUDIO NOTARIAL
-                </Typography>
-                <Typography component="p" sx={claimStyles}>
-                  Seguridad jurídica, confianza y compromiso profesional
-                </Typography>
-                <Button
-                  variant="contained"
-                  size="large"
-                  sx={{
-                    backgroundColor: '#CA9954',
-                    color: '#FFFFFF',
-                    padding: { xs: '10px 24px', sm: '12px 32px', md: '16px 48px' },
-                    fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
-                    fontFamily: 'Lato',
-                    fontWeight: 700,
-                    borderRadius: '4px',
-                    whiteSpace: { xs: 'normal', sm: 'nowrap' },
-                    '&:hover': {
-                      backgroundColor: '#B88944',
-                    },
-                  }}
-                >
-                  Solicitar asesoramiento
-                </Button>
-              </TextContent>
+              <AnimatedSection delay={400} direction="right" duration={800}>
+                <TextContent>
+                  <Typography component="h1" sx={titleStyles}>
+                    VERA OJEDA
+                  </Typography>
+                  <Typography component="h2" sx={subtitleStyles}>
+                    ESTUDIO NOTARIAL
+                  </Typography>
+                  <Typography component="p" sx={claimStyles}>
+                    Seguridad jurídica, confianza y compromiso profesional
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    sx={{
+                      backgroundColor: '#CA9954',
+                      color: '#FFFFFF',
+                      padding: { xs: '10px 24px', sm: '12px 32px', md: '16px 48px' },
+                      fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
+                      fontFamily: 'Lato',
+                      fontWeight: 700,
+                      borderRadius: '4px',
+                      whiteSpace: { xs: 'normal', sm: 'nowrap' },
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        backgroundColor: '#B88944',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 4px 12px rgba(202, 153, 84, 0.3)',
+                      },
+                    }}
+                  >
+                    Solicitar asesoramiento
+                  </Button>
+                </TextContent>
+              </AnimatedSection>
             </Grid>
           </Grid>
         </HeroContent>

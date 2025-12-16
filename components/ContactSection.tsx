@@ -8,6 +8,7 @@ import {
   WhatsApp,
   Email,
 } from '@mui/icons-material';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -68,23 +69,26 @@ export default function ContactSection() {
   return (
     <SectionContainer id="contacto">
       <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={{
-            fontFamily: 'Lato',
-            fontWeight: 700,
-            color: '#294549',
-            textAlign: 'center',
-            marginBottom: { xs: 4, md: 8 },
-            fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
-          }}
-        >
-          Contacto
-        </Typography>
+        <AnimatedSection delay={0} direction="up" duration={700}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              fontFamily: 'Lato',
+              fontWeight: 700,
+              color: '#294549',
+              textAlign: 'center',
+              marginBottom: { xs: 4, md: 8 },
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
+            }}
+          >
+            Contacto
+          </Typography>
+        </AnimatedSection>
         <Grid container spacing={{ xs: 3, sm: 4, md: 6 }}>
           <Grid item xs={12} md={6}>
-            <FormCard>
+            <AnimatedSection delay={200} direction="right" duration={700}>
+              <FormCard>
               <Typography
                 variant="h4"
                 component="h3"
@@ -183,10 +187,12 @@ export default function ContactSection() {
                   Enviar mensaje
                 </Button>
               </Box>
-            </FormCard>
+              </FormCard>
+            </AnimatedSection>
           </Grid>
           <Grid item xs={12} md={6}>
-            <ContactInfo>
+            <AnimatedSection delay={400} direction="left" duration={700}>
+              <ContactInfo>
               <Typography
                 variant="h4"
                 component="h3"
@@ -268,7 +274,8 @@ export default function ContactSection() {
                   [Email mock]
                 </Typography>
               </ContactItem>
-            </ContactInfo>
+              </ContactInfo>
+            </AnimatedSection>
           </Grid>
         </Grid>
       </Container>

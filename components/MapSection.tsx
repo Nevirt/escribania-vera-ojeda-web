@@ -3,6 +3,7 @@
 import { Box, Container, Typography, Grid, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { LocationOn, Phone, Email, AccessTime } from '@mui/icons-material';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -68,67 +69,74 @@ export default function MapSection({
 
   return (
     <SectionContainer id="ubicacion">
-      <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={{
-            fontFamily: 'Lato',
-            fontWeight: 700,
-            color: '#294549',
-            textAlign: 'center',
-            marginBottom: 8,
-          }}
-        >
-          Ubicación y Contacto
-        </Typography>
-        <Grid container spacing={4}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+        <AnimatedSection delay={0} direction="up" duration={700}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              fontFamily: 'Lato',
+              fontWeight: 700,
+              color: '#294549',
+              textAlign: 'center',
+              marginBottom: { xs: 4, md: 8 },
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
+            }}
+          >
+            Ubicación y Contacto
+          </Typography>
+        </AnimatedSection>
+        <Grid container spacing={{ xs: 3, sm: 4, md: 4 }}>
           <Grid item xs={12} md={8}>
-            <MapContainer>
-              {mapEmbedUrl ? (
-                <iframe
-                  src={mapEmbedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              ) : (
-                <Box
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#F5F5F5',
-                    color: '#999',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  <Typography variant="body2">
-                    [Configurar Google Maps Embed URL]
-                  </Typography>
-                </Box>
-              )}
-            </MapContainer>
+            <AnimatedSection delay={200} direction="right" duration={700}>
+              <MapContainer>
+                {mapEmbedUrl ? (
+                  <iframe
+                    src={mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                ) : (
+                  <Box
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      backgroundColor: '#F5F5F5',
+                      color: '#999',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    <Typography variant="body2">
+                      [Configurar Google Maps Embed URL]
+                    </Typography>
+                  </Box>
+                )}
+              </MapContainer>
+            </AnimatedSection>
           </Grid>
           <Grid item xs={12} md={4}>
-            <InfoCard>
-              <Typography
-                variant="h4"
-                component="h3"
-                sx={{
-                  fontFamily: 'Lato',
-                  fontWeight: 700,
-                  color: '#294549',
-                  marginBottom: 3,
-                }}
-              >
-                Información
-              </Typography>
+            <AnimatedSection delay={400} direction="left" duration={700}>
+              <InfoCard>
+                <Typography
+                  variant="h4"
+                  component="h3"
+                  sx={{
+                    fontFamily: 'Lato',
+                    fontWeight: 700,
+                    color: '#294549',
+                    marginBottom: 3,
+                    fontSize: { xs: '1.25rem', sm: '1.375rem', md: '1.5rem' },
+                  }}
+                >
+                  Información
+                </Typography>
               <InfoItem>
                 <InfoIcon>
                   <LocationOn />
@@ -193,7 +201,8 @@ export default function MapSection({
                   {hours}
                 </Typography>
               </InfoItem>
-            </InfoCard>
+              </InfoCard>
+            </AnimatedSection>
           </Grid>
         </Grid>
       </Container>

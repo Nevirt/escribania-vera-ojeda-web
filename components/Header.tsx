@@ -14,6 +14,17 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   top: 0,
   zIndex: 1300,
   transition: 'all 0.3s ease',
+  animation: 'slideDown 0.6s ease-out',
+  '@keyframes slideDown': {
+    from: {
+      transform: 'translateY(-100%)',
+      opacity: 0,
+    },
+    to: {
+      transform: 'translateY(0)',
+      opacity: 1,
+    },
+  },
 }));
 
 const LogoContainer = styled(Box)(({ theme }) => ({

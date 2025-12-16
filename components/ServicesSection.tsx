@@ -9,6 +9,8 @@ import {
   MenuBook,
   BusinessCenter,
 } from '@mui/icons-material';
+import AnimatedSection from '@/components/AnimatedSection';
+import AnimatedCard from '@/components/AnimatedCard';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -27,13 +29,14 @@ const ServiceCard = styled(Card)(({ theme }) => ({
   borderBottom: `3px solid #EDBD83`,
   borderRadius: '8px',
   padding: theme.spacing(3),
-  transition: 'all 0.3s ease',
+  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(2.5),
   },
   '&:hover': {
     borderBottomColor: '#CA9954',
     transform: 'translateY(-4px)',
+    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
   },
 }));
 
@@ -81,53 +84,57 @@ export default function ServicesSection() {
   return (
     <SectionContainer id="servicios">
       <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={{
-            fontFamily: 'Lato',
-            fontWeight: 700,
-            color: '#294549',
-            textAlign: 'center',
-            marginBottom: { xs: 4, md: 8 },
-            fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
-          }}
-        >
-          Servicios Notariales
-        </Typography>
+        <AnimatedSection delay={0} direction="up" duration={700}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              fontFamily: 'Lato',
+              fontWeight: 700,
+              color: '#294549',
+              textAlign: 'center',
+              marginBottom: { xs: 4, md: 8 },
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
+            }}
+          >
+            Servicios Notariales
+          </Typography>
+        </AnimatedSection>
         <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
           {services.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <ServiceCard>
-                <CardContent sx={{ padding: 0 }}>
-                  <ServiceIcon>{service.icon}</ServiceIcon>
-                  <Typography
-                    variant="h5"
-                    component="h3"
-                    sx={{
-                      fontFamily: 'Lato',
-                      fontWeight: 700,
-                      color: '#294549',
-                      marginBottom: { xs: 1.5, md: 2 },
-                      fontSize: { xs: '1.125rem', sm: '1.25rem', md: '1.5rem' },
-                    }}
-                  >
-                    {service.title}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontFamily: 'Lato',
-                      fontWeight: 400,
-                      color: '#294549',
-                      lineHeight: 1.7,
-                      fontSize: { xs: '0.9375rem', md: '1rem' },
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </CardContent>
-              </ServiceCard>
+              <AnimatedCard delay={index * 100} duration={600}>
+                <ServiceCard>
+                  <CardContent sx={{ padding: 0 }}>
+                    <ServiceIcon>{service.icon}</ServiceIcon>
+                    <Typography
+                      variant="h5"
+                      component="h3"
+                      sx={{
+                        fontFamily: 'Lato',
+                        fontWeight: 700,
+                        color: '#294549',
+                        marginBottom: { xs: 1.5, md: 2 },
+                        fontSize: { xs: '1.125rem', sm: '1.25rem', md: '1.5rem' },
+                      }}
+                    >
+                      {service.title}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontFamily: 'Lato',
+                        fontWeight: 400,
+                        color: '#294549',
+                        lineHeight: 1.7,
+                        fontSize: { xs: '0.9375rem', md: '1rem' },
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
+                  </CardContent>
+                </ServiceCard>
+              </AnimatedCard>
             </Grid>
           ))}
         </Grid>

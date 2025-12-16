@@ -9,6 +9,8 @@ import {
   Person,
   Gavel,
 } from '@mui/icons-material';
+import AnimatedSection from '@/components/AnimatedSection';
+import AnimatedCard from '@/components/AnimatedCard';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -24,11 +26,16 @@ const SectionContainer = styled(Box)(({ theme }) => ({
 const ValueItem = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   padding: theme.spacing(4, 2),
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
   [theme.breakpoints.down('md')]: {
     padding: theme.spacing(3, 2),
   },
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(2, 1),
+    padding: theme.spacing(2.5, 1.5),
   },
 }));
 
@@ -36,6 +43,10 @@ const ValueIcon = styled(Box)(({ theme }) => ({
   color: '#CA9954',
   marginBottom: theme.spacing(3),
   fontSize: '3rem',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
   [theme.breakpoints.down('sm')]: {
     marginBottom: theme.spacing(2),
     '& svg': {
@@ -71,21 +82,23 @@ export default function ValuesSection() {
   return (
     <SectionContainer id="valores">
       <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={{
-            fontFamily: 'Lato',
-            fontWeight: 700,
-            color: '#294549',
-            textAlign: 'center',
-            marginBottom: { xs: 4, md: 8 },
-            fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
-          }}
-        >
-          Valores Institucionales
-        </Typography>
-        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+        <AnimatedSection delay={0} direction="up" duration={700}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              fontFamily: 'Lato',
+              fontWeight: 700,
+              color: '#294549',
+              textAlign: 'center',
+              marginBottom: { xs: 4, md: 8 },
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.75rem' },
+            }}
+          >
+            Valores Institucionales
+          </Typography>
+        </AnimatedSection>
+        <Grid container spacing={{ xs: 3, sm: 3, md: 4 }} justifyContent="center" alignItems="stretch">
           {values.map((value, index) => {
             const isLast = index === values.length - 1;
             const isOdd = values.length % 2 !== 0;
@@ -100,13 +113,18 @@ export default function ValuesSection() {
                 key={index}
                 sx={{
                   display: 'flex',
-                  justifyContent: isLastInOddList ? 'center' : 'stretch',
+                  justifyContent: 'center',
+                  alignItems: 'stretch',
                 }}
               >
-                <Box
-                  sx={{
-                    width: isLastInOddList ? { xs: '100%', sm: '66.666%' } : '100%',
-                    maxWidth: isLastInOddList ? '400px' : 'none',
+                <AnimatedCard 
+                  delay={index * 100} 
+                  duration={600} 
+                  sx={{ 
+                    width: '100%', 
+                    maxWidth: isLastInOddList ? '400px' : '100%',
+                    display: 'flex',
+                    alignItems: 'stretch',
                   }}
                 >
                   <ValueItem>
@@ -119,12 +137,14 @@ export default function ValuesSection() {
                         fontWeight: 700,
                         color: '#294549',
                         fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
+                        textAlign: 'center',
+                        width: '100%',
                       }}
                     >
                       {value.title}
                     </Typography>
                   </ValueItem>
-                </Box>
+                </AnimatedCard>
               </Grid>
             );
           })}

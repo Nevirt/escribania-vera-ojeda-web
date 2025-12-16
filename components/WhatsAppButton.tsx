@@ -14,7 +14,24 @@ const StyledFab = styled(Fab)(({ theme }) => ({
   height: 60,
   zIndex: 1000,
   boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
-  transition: 'all 0.3s ease',
+  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  animation: 'bounceIn 0.8s ease-out 0.5s both',
+  '@keyframes bounceIn': {
+    '0%': {
+      opacity: 0,
+      transform: 'scale(0.3) translateY(20px)',
+    },
+    '50%': {
+      opacity: 1,
+      transform: 'scale(1.05)',
+    },
+    '70%': {
+      transform: 'scale(0.9)',
+    },
+    '100%': {
+      transform: 'scale(1)',
+    },
+  },
   '&:hover': {
     backgroundColor: '#20BA5A',
     transform: 'scale(1.1)',

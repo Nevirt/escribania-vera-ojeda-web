@@ -3,8 +3,36 @@ import ThemeProvider from '@/providers/ThemeProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Vera Ojeda – Estudio Notarial',
-  description: 'Seguridad jurídica, confianza y compromiso profesional',
+  title: 'Estudio Notarial Vera Ojeda | Servicios Jurídicos y Notariales en Paraguay',
+  description: 'Estudio jurídico y notarial con más de 36 años de trayectoria. Servicios legales, notariales y migratorios en Paraguay. Seguridad jurídica, confianza y compromiso profesional.',
+  keywords: [
+    'estudio jurídico y notarial',
+    'abogado en Paraguay',
+    'servicios legales en Paraguay',
+    'servicios migratorios Paraguay',
+    'asesoría legal y migratoria',
+    'notario público Paraguay',
+    'escribanía en Paraguay',
+    'legalización de documentos',
+    'escrituras públicas',
+    'abogado en Asunción',
+    'estudio jurídico en Asunción',
+    'notaría en Asunción',
+  ],
+  authors: [{ name: 'Estudio Notarial Vera Ojeda' }],
+  openGraph: {
+    title: 'Estudio Notarial Vera Ojeda | Servicios Jurídicos y Notariales',
+    description: 'Estudio jurídico y notarial con más de 36 años de trayectoria. Servicios legales, notariales y migratorios en Paraguay.',
+    type: 'website',
+    locale: 'es_PY',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://www.estudioveraojeda.com',
+  },
 };
 
 export default function RootLayout({

@@ -8,6 +8,8 @@ import {
   Assignment,
   MenuBook,
   BusinessCenter,
+  Gavel,
+  VerifiedUser,
 } from '@mui/icons-material';
 import AnimatedSection from '@/components/AnimatedSection';
 import AnimatedCard from '@/components/AnimatedCard';
@@ -54,29 +56,64 @@ const ServiceIcon = styled(Box)(({ theme }) => ({
 
 const services = [
   {
-    title: 'Escrituras públicas',
+    title: 'Transferencia de inmuebles/muebles',
     icon: <Description sx={{ fontSize: '2.5rem' }} />,
-    description: 'Documentación notarial de actos y contratos con validez jurídica plena.',
+    description: 'Documentación notarial para transferencias de propiedad con validez jurídica plena.',
   },
   {
-    title: 'Certificaciones y autenticaciones',
+    title: 'Poderes en general',
+    icon: <Verified sx={{ fontSize: '2.5rem' }} />,
+    description: 'Otorgamiento de poderes notariales para diversos trámites y representaciones legales.',
+  },
+  {
+    title: 'Certificación de Firmas',
     icon: <Verified sx={{ fontSize: '2.5rem' }} />,
     description: 'Autenticación de firmas y certificación de documentos con garantía legal.',
   },
   {
-    title: 'Contratos y actos jurídicos',
+    title: 'Contratos',
     icon: <Assignment sx={{ fontSize: '2.5rem' }} />,
-    description: 'Asesoramiento y documentación de contratos y actos jurídicos diversos.',
+    description: 'Asesoramiento y documentación de contratos diversos con validez notarial.',
   },
   {
-    title: 'Testamentos',
+    title: 'Actas notariales',
     icon: <MenuBook sx={{ fontSize: '2.5rem' }} />,
-    description: 'Asesoramiento y formalización de testamentos con la máxima confidencialidad.',
+    description: 'Elaboración de actas notariales para diversos actos y situaciones jurídicas.',
   },
   {
-    title: 'Trámites notariales generales',
+    title: 'Autenticación de Documentos',
+    icon: <Verified sx={{ fontSize: '2.5rem' }} />,
+    description: 'Autenticación y legalización de documentos con validez jurídica.',
+  },
+  {
+    title: 'Constitución/Modificación de Sociedades',
     icon: <BusinessCenter sx={{ fontSize: '2.5rem' }} />,
-    description: 'Servicios notariales integrales para necesidades jurídicas diversas.',
+    description: 'Asesoramiento y documentación para constitución y modificación de sociedades comerciales.',
+  },
+  {
+    title: 'Cesión de derechos/acciones',
+    icon: <Assignment sx={{ fontSize: '2.5rem' }} />,
+    description: 'Documentación notarial para cesión de derechos y acciones empresariales.',
+  },
+  {
+    title: 'Gestión de chapas / Cédula Verde',
+    icon: <BusinessCenter sx={{ fontSize: '2.5rem' }} />,
+    description: 'Asesoramiento y gestión de trámites vehiculares y documentación automotriz.',
+  },
+  {
+    title: 'Litigios Civiles y Penales',
+    icon: <Gavel sx={{ fontSize: '2.5rem' }} />,
+    description: 'Representación legal en procesos civiles y penales con profesionalismo y ética.',
+  },
+  {
+    title: 'Asesoría Legal',
+    icon: <VerifiedUser sx={{ fontSize: '2.5rem' }} />,
+    description: 'Asesoramiento legal integral para particulares y empresas.',
+  },
+  {
+    title: 'Trámites Migratorios',
+    icon: <BusinessCenter sx={{ fontSize: '2.5rem' }} />,
+    description: 'Asesoramiento y gestión de trámites migratorios, residencias y nacionalización.',
   },
 ];
 

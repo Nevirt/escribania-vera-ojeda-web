@@ -170,7 +170,10 @@ export default function HeroSection() {
                     ESTUDIO NOTARIAL
                   </Typography>
                   <Typography component="p" sx={claimStyles}>
-                    Seguridad jurídica, confianza y compromiso profesional
+                    Brindamos servicios jurídicos integrales, con profesionalismo, ética y
+                    responsabilidad, ofreciendo seguridad jurídica eficiente para proteger
+                    tus derechos e intereses, mediante una atención personalizada y un
+                    asesoramiento claro y confiable.
                   </Typography>
                   <Button
                     variant="contained"

@@ -101,6 +101,22 @@ Ver `CONFIGURACION.md` para instrucciones detalladas.
 ✅ Diseño responsive  
 ✅ Optimización de imágenes con Next.js Image
 
+## 🌐 Dominio Personalizado
+
+El sitio está configurado para funcionar con el dominio personalizado:
+- **www.estudioveraojeda.com**
+
+Para configurar el dominio en Vercel, consulta la guía completa en:
+- **[CONFIGURACION_DOMINIO.md](./CONFIGURACION_DOMINIO.md)**
+
+### Resumen Rápido:
+1. Ve a tu proyecto en Vercel Dashboard → Settings → Domains
+2. Agrega `www.estudioveraojeda.com`
+3. Configura los registros DNS según las instrucciones de Vercel
+4. Espera la propagación DNS (5 min - 48 horas)
+
+Vercel proporciona SSL/HTTPS automático y gratuito.
+
 ## Notas
 
 - Los datos marcados como "[mock]" deben ser reemplazados por información real

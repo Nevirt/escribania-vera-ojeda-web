@@ -10,7 +10,6 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
-// Datos mock - reemplazar con datos reales
 const testimonials = [
   {
     text: 'El profesionalismo y la atención personalizada del Estudio Vera Ojeda nos brindaron la seguridad jurídica que necesitábamos para nuestros trámites más importantes.',
@@ -30,15 +29,15 @@ const testimonials = [
 ];
 
 const mapData = {
-  address: '[Dirección completa del estudio notarial]',
-  phone: '[Teléfono del estudio]',
-  email: '[Email del estudio]',
+  address: 'Ruta Py 01 (ex Acceso Sur) entre Belén y Juan S. Bogarín',
+  phone: '+595 971 224 261',
+  email: 'escribaniaveraojeda@hotmail.com',
   hours: 'Lunes a Viernes: 9:00 - 18:00 hs',
-  mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.838861544398!2d-57.64318802313578!3d-25.27600551776524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da78ba5186d5f%3A0x85d4cba27ed87805!2sPuerto%20de%20Asunci%C3%B3n!5e0!3m2!1sen!2spy!4v1765826437366!5m2!1sen!2spy', // Configurar con Google Maps Embed URL
+  mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4283.92638047032!2d-57.516097344523715!3d-25.460375564537262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sRuta%20Py%2001%20(ex%20Acceso%20Sur)%20entre%20Bel%C3%A9n%20y%20Juan%20S.%20Bogar%C3%ADn!5e0!3m2!1sen!2spy!4v1767114754842!5m2!1sen!2spy',
 };
 
 const whatsappData = {
-  phoneNumber: '[Número de WhatsApp sin espacios ni caracteres especiales, ej: 5491123456789]',
+  phoneNumber: '595971224261',
   message: 'Hola, me gustaría solicitar información sobre sus servicios notariales.',
 };
 

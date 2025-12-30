@@ -80,19 +80,20 @@ export default function AboutSection() {
             <AnimatedSection delay={200} direction="right" duration={700}>
               <TextContent>
                 <Paragraph>
-                  Con una sólida tradición en el ejercicio notarial, nuestro estudio se
-                  distingue por el compromiso inquebrantable con la seguridad jurídica y
-                  la excelencia profesional.
+                  Con más de 36 años de trayectoria en el ejercicio notarial, el Estudio
+                  Notarial Vera Ojeda se distingue por el compromiso inquebrantable con
+                  la seguridad jurídica y la excelencia profesional.
                 </Paragraph>
                 <Paragraph>
-                  Ofrecemos un servicio caracterizado por la responsabilidad profesional,
-                  la atención personalizada y el respaldo legal que cada cliente merece.
-                  Cada acto notarial es tratado con la máxima seriedad y dedicación.
+                  Dirigido por la Escribana Teresa Dejesus Vera Ojeda, Registro Notarial
+                  N° 316, nuestro estudio ofrece servicios jurídicos integrales con
+                  profesionalismo, ética y responsabilidad.
                 </Paragraph>
                 <Paragraph>
-                  Nuestra experiencia y conocimiento se ponen al servicio de quienes
-                  confían en nosotros para proteger sus intereses y garantizar la validez
-                  jurídica de sus decisiones más importantes.
+                  Brindamos seguridad jurídica eficiente para proteger tus derechos e
+                  intereses, mediante una atención personalizada y un asesoramiento claro
+                  y confiable. Cada acto notarial es tratado con la máxima seriedad y
+                  dedicación.
                 </Paragraph>
               </TextContent>
             </AnimatedSection>

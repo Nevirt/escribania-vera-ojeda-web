@@ -220,7 +220,7 @@ export default function ContactSection() {
                     fontSize: { xs: '0.9375rem', md: '1rem' },
                   }}
                 >
-                  [Dirección mock del estudio notarial]
+                  Ruta Py 01 (ex Acceso Sur) entre Belén y Juan S. Bogarín
                 </Typography>
               </ContactItem>
               <ContactItem>
@@ -237,7 +237,7 @@ export default function ContactSection() {
                     fontSize: { xs: '0.9375rem', md: '1rem' },
                   }}
                 >
-                  [Teléfono mock]
+                  +595 971 224 261
                 </Typography>
               </ContactItem>
               <ContactItem>
@@ -254,7 +254,7 @@ export default function ContactSection() {
                     fontSize: { xs: '0.9375rem', md: '1rem' },
                   }}
                 >
-                  [WhatsApp mock]
+                  +595 971 224 261 / 0981 845 586
                 </Typography>
               </ContactItem>
               <ContactItem>
@@ -271,7 +271,7 @@ export default function ContactSection() {
                     fontSize: { xs: '0.9375rem', md: '1rem' },
                   }}
                 >
-                  [Email mock]
+                  escribaniaveraojeda@hotmail.com
                 </Typography>
               </ContactItem>
               </ContactInfo>

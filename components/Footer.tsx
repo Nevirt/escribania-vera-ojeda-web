@@ -10,6 +10,9 @@ const FooterContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 0),
   color: '#FFFFFF',
   textAlign: 'center',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(4, 0),
+  },
 }));
 
 const FooterText = styled(Typography)(({ theme }) => ({
@@ -19,6 +22,12 @@ const FooterText = styled(Typography)(({ theme }) => ({
   color: '#FFFFFF',
   opacity: 0.9,
   marginBottom: theme.spacing(1),
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.875rem',
+    lineHeight: 1.6,
+    marginBottom: theme.spacing(0.75),
+    padding: theme.spacing(0, 2),
+  },
 }));
 
 const FooterTitle = styled(Typography)(({ theme }) => ({
@@ -27,6 +36,11 @@ const FooterTitle = styled(Typography)(({ theme }) => ({
   fontSize: '1.25rem',
   color: '#FFFFFF',
   marginBottom: theme.spacing(2),
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.125rem',
+    marginBottom: theme.spacing(1.5),
+    padding: theme.spacing(0, 2),
+  },
 }));
 
 const SocialLinks = styled(Box)(({ theme }) => ({
@@ -35,6 +49,10 @@ const SocialLinks = styled(Box)(({ theme }) => ({
   gap: theme.spacing(2),
   marginTop: theme.spacing(3),
   marginBottom: theme.spacing(2),
+  [theme.breakpoints.down('sm')]: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(1.5),
+  },
 }));
 
 const SocialIcon = styled(IconButton)(({ theme }) => ({
@@ -50,7 +68,7 @@ export default function Footer() {
 
   return (
     <FooterContainer>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         <AnimatedSection delay={0} direction="fade" duration={600}>
           <FooterTitle>
             Estudio Notarial Vera Ojeda
@@ -63,8 +81,14 @@ export default function Footer() {
           <FooterText>
             Ruta Py 01 (ex Acceso Sur) entre Belén y Juan S. Bogarín
           </FooterText>
-          <FooterText>
-            Tel: +595 971 224 261 | Email: escribaniaveraojeda@hotmail.com
+          <FooterText sx={{ 
+            display: { xs: 'flex', sm: 'block' }, 
+            flexDirection: { xs: 'column' },
+            gap: { xs: 0.5 },
+          }}>
+            <Box component="span">Tel: +595 971 224 261</Box>
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}> | </Box>
+            <Box component="span">Email: escribaniaveraojeda@hotmail.com</Box>
           </FooterText>
         </AnimatedSection>
         <AnimatedSection delay={300} direction="fade" duration={600}>
@@ -92,7 +116,11 @@ export default function Footer() {
           </SocialLinks>
         </AnimatedSection>
         <AnimatedSection delay={400} direction="fade" duration={600}>
-          <FooterText>
+          <FooterText sx={{ 
+            fontSize: { xs: '0.8125rem', sm: '1rem' },
+            opacity: 0.8,
+            marginTop: { xs: 1, sm: 0 },
+          }}>
             © {currentYear} Powered by Innomia. Todos los derechos reservados.
           </FooterText>
         </AnimatedSection>

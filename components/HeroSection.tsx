@@ -74,7 +74,7 @@ const titleStyles = {
   letterSpacing: '-0.02em',
   marginBottom: { xs: 1.5, md: 2 },
   color: '#FFFFFF',
-  textAlign: 'left',
+  textAlign: { xs: 'center', sm: 'left' },
 };
 
 const subtitleStyles = {
@@ -83,6 +83,7 @@ const subtitleStyles = {
   fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem', lg: '1.75rem' },
   color: '#CA9954',
   marginBottom: { xs: 2, md: 4 },
+  textAlign: { xs: 'center', sm: 'left' },
 };
 
 const claimStyles = {
@@ -93,11 +94,25 @@ const claimStyles = {
   marginBottom: { xs: 3, md: 5 },
   opacity: 0.95,
   lineHeight: 1.8,
-  maxWidth: '600px',
-  textAlign: 'left',
+  maxWidth: { xs: '100%', sm: '600px' },
+  textAlign: { xs: 'center', sm: 'left' },
 };
 
 export default function HeroSection() {
+  const scrollToContact = () => {
+    const element = document.getElementById('contacto');
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <HeroContainer 
       id="inicio"
@@ -136,17 +151,17 @@ export default function HeroSection() {
       </BackgroundImage>
       <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         <HeroContent>
-          <Grid container spacing={{ xs: 1.5, sm: 2, md: 4 }} alignItems="center">
-            <Grid item xs={5} sm={5} md={5}>
+          <Grid container spacing={{ xs: 3, sm: 2, md: 4 }} alignItems="center">
+            <Grid item xs={12} sm={5} md={5}>
               <AnimatedSection delay={200} direction="fade" duration={800}>
                 <LogoContainer>
                   <Box
                     sx={{
                       width: '100%',
-                      maxWidth: { xs: '200px', sm: '250px', md: '300px', lg: '380px' },
+                      maxWidth: { xs: '180px', sm: '250px', md: '300px', lg: '380px' },
                       aspectRatio: '1 / 1',
                       position: 'relative',
-                      margin: '0 auto',
+                      margin: { xs: '0 auto 2rem', sm: '0 auto', md: '0 auto' },
                     }}
                   >
                     <Image
@@ -160,9 +175,9 @@ export default function HeroSection() {
                 </LogoContainer>
               </AnimatedSection>
             </Grid>
-            <Grid item xs={7} sm={7} md={7}>
+            <Grid item xs={12} sm={7} md={7}>
               <AnimatedSection delay={400} direction="right" duration={800}>
-                <TextContent>
+                <TextContent sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
                   <Typography component="h1" sx={titleStyles}>
                     VERA OJEDA
                   </Typography>
@@ -175,28 +190,31 @@ export default function HeroSection() {
                     tus derechos e intereses, mediante una atención personalizada y un
                     asesoramiento claro y confiable.
                   </Typography>
-                  <Button
-                    variant="contained"
-                    size="large"
-                    sx={{
-                      backgroundColor: '#CA9954',
-                      color: '#FFFFFF',
-                      padding: { xs: '10px 24px', sm: '12px 32px', md: '16px 48px' },
-                      fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
-                      fontFamily: 'Lato',
-                      fontWeight: 700,
-                      borderRadius: '4px',
-                      whiteSpace: { xs: 'normal', sm: 'nowrap' },
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        backgroundColor: '#B88944',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 4px 12px rgba(202, 153, 84, 0.3)',
-                      },
-                    }}
-                  >
-                    Solicitar asesoramiento
-                  </Button>
+                  <Box sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'flex-start' } }}>
+                    <Button
+                      variant="contained"
+                      size="large"
+                      onClick={scrollToContact}
+                      sx={{
+                        backgroundColor: '#CA9954',
+                        color: '#FFFFFF',
+                        padding: { xs: '12px 28px', sm: '12px 32px', md: '16px 48px' },
+                        fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' },
+                        fontFamily: 'Lato',
+                        fontWeight: 700,
+                        borderRadius: '4px',
+                        whiteSpace: 'nowrap',
+                        transition: 'all 0.3s ease',
+                        '&:hover': {
+                          backgroundColor: '#B88944',
+                          transform: 'translateY(-2px)',
+                          boxShadow: '0 4px 12px rgba(202, 153, 84, 0.3)',
+                        },
+                      }}
+                    >
+                      Solicitar asesoramiento
+                    </Button>
+                  </Box>
                 </TextContent>
               </AnimatedSection>
             </Grid>

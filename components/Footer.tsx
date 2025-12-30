@@ -93,7 +93,7 @@ export default function Footer() {
         </AnimatedSection>
         <AnimatedSection delay={400} direction="fade" duration={600}>
           <FooterText>
-            © {currentYear} Estudio Notarial Vera Ojeda. Todos los derechos reservados.
+            © {currentYear} Powered by Innomia. Todos los derechos reservados.
           </FooterText>
         </AnimatedSection>
       </Container>

@@ -2,6 +2,7 @@
 
 import { Box, Container, Grid, Typography, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
@@ -15,15 +16,13 @@ const SectionContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ImagePlaceholder = styled(Box)(({ theme }) => ({
+const ImageContainer = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '400px',
-  backgroundColor: '#F5F5F5',
+  position: 'relative',
   borderRadius: '8px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  border: '1px solid #E0E0E0',
+  overflow: 'hidden',
+  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
   [theme.breakpoints.down('md')]: {
     height: '280px',
     marginTop: theme.spacing(3),
@@ -100,17 +99,17 @@ export default function AboutSection() {
           </Grid>
           <Grid item xs={12} md={6}>
             <AnimatedSection delay={400} direction="left" duration={700}>
-              <ImagePlaceholder>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: '#999',
-                    fontStyle: 'italic',
+              <ImageContainer>
+                <Image
+                  src="/images/imagen-vera-descripcion.jpeg"
+                  alt="Estudio Notarial Vera Ojeda"
+                  fill
+                  style={{
+                    objectFit: 'cover',
                   }}
-                >
-                  [Imagen mock: Escribanía, documentos, firma, escritorio]
-                </Typography>
-              </ImagePlaceholder>
+                  quality={90}
+                />
+              </ImageContainer>
             </AnimatedSection>
           </Grid>
         </Grid>
